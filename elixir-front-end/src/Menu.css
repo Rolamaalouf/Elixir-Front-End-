@@ -1,108 +1,153 @@
-/* Apply a gradient to the hero background from both top and bottom */
-.Menu {
-    position: relative;
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px;
-    color: black;
-    text-align: left; /* Ensure text is aligned left */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.7));
+/* Reset margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #C8E5F1 0%, #C8E5F1 50%, #FFFFFF 50%, #FFFFFF 100%);
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* --- Hero Section --- */
+.head {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  color: black;
+  text-align: left;
+  background-size: cover;
+  background-position: center;
+  background: linear-gradient(to bottom, #C8E5F1 20%, white 50%);
   }
-  
-  /* Hero Content - Left Side */
-  .hero-content {
-    max-width: 50%;
-    text-align: left; /* Ensure text stays left */
-  }
-  
-  .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-  
-  .hero-content h2 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 20px;
-  }
-  
-  /* Hero Image - Right Side */
-  .hero img {
-    max-width: 40%;
-    height: auto;
-    position: relative;
-    top: 20px; /* Lower the image */
-  }
-  
-  /* --- Best Sellers Section --- */
-  .best-sellers {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 50px;
-  }
-  
-  .best-sellers .box {
-    width: 250px;
-    padding: 15px;
-    background: white;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .best-sellers .box img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  /* Shadow Effects */
-  .best-sellers .box:nth-child(1) {
-    box-shadow: 0px 8px 20px rgba(128, 0, 128, 0.6); /* Purple shadow */
-  }
-  
-  .best-sellers .box:nth-child(2) {
-    box-shadow: 0px 8px 20px rgba(0, 0, 255, 0.6); /* Blue shadow */
-  }
-  
-  /* --- Menu Categories Section --- */
-  .menu-categories {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 50px;
-  }
-  
-  .menu-container {
-    display: flex;
+/* Hero Content - Left Side */
+.head-content {
+  max-width: 50%;
+  text-align: left;
+}
+
+.head-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.head-content h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+/* Hero Image - Right Side */
+.head img {
+  max-width: 40%;
+  height: auto;
+  position: relative;
+  top: 20px;
+  border-radius: 10px;
+}
+
+/* --- Best Sellers Section --- */
+.best-sellers {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 80px auto;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  max-width: 80%;
+}
+
+.best-sellers .box {
+  width: 280px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.best-sellers .box img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Hover effect */
+.best-sellers .box:hover {
+  transform: scale(1.05);
+}
+
+/* Shadow Effects */
+.best-sellers .box:nth-child(1) {
+  box-shadow: 0px 8px 20px rgba(128, 0, 128, 0.6); /* Purple shadow */
+}
+
+.best-sellers .box:nth-child(2) {
+  box-shadow: 0px 8px 20px rgba(0, 0, 255, 0.6); /* Blue shadow */
+}
+
+/* --- Menu Categories Section --- */
+.menu-categories {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  max-width: 90%;
+  margin: auto;
+}
+
+/* Menu Category Containers */
+
+.menu-container img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .head {
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: auto;
+    padding: 30px;
   }
-  
-  /* First container: Coffee & Ice Latte */
-  .menu-container:first-child {
-   border: blue;
+
+  .head-content {
+    max-width: 100%;
   }
-  
-  /* Second container: Mocktails, Refreshments & Milkshakes */
-  .menu-container:last-child {
-    border : violet
+
+  .head img {
+    max-width: 60%;
+    margin-top: 20px;
   }
-  
-  /* Ensure Images Fit */
-  .menu-container img {
-    width: 100%;
-    border-radius: 10px;
+
+  .menu-categories {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  
+}
+
+@media (max-width: 768px) {
+  .head-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .head-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .best-sellers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-container {
+    max-width: 90%;
+  }
+}

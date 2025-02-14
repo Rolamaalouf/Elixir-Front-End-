@@ -22,9 +22,9 @@ const Menu = () => {
     return (
         <div className="menu-container">
             {/* Hero Section */}
-            <section className="hero">
-                <img src={menuData.heroSection.image} alt="Hero" className="hero-image" />
-                <p className="hero-text">{menuData.heroSection.paragraph}</p>
+            <section className="head">
+                <img src={menuData.heroSection.image} alt="Head" className="head-image" />
+                <p className="head-text">{menuData.heroSection.paragraph}</p>
             </section>
 
             {/* Best Sellers Section */}
