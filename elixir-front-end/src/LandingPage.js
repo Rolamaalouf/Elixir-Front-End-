@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import axios from "axios";
 import "./LandingPage.css";
 import Header from "./Components/header"; // Keep Header for all routes
-import ball from "./Assets/ball.png"
-import {useNavigate } from "react-router-dom";
+import ball from "./Assets/ball.png";
+import { useNavigate } from "react-router-dom";
+import Menu from "./Menu";
 
 const LandingPage = () => {
   const [data, setData] = useState(null);
@@ -28,16 +29,14 @@ const LandingPage = () => {
     <Router>
       <div className="landing-page">
         <Header /> {/* This header will be displayed on all routes */}
-        
-        {/* Conditional Hero Section */}
+
+        {/* Render HeroSection conditionally based on the path */}
         <HeroSection data={data} />
 
         {/* Routes for Different Pages */}
         <Routes>
           <Route path="/" element={<MainContent data={data} />} />
-          <Route path="/menu" element={<ContentSection data={data.mainSection.ourMenu} />} />
-          <Route path="/story" element={<ContentSection data={data.mainSection.ourStory} />} />
-          <Route path="/visit" element={<ContentSection data={data.mainSection.visitUs} />} />
+          <Route path="/menu" element={<Menu />} /> {/* Assuming Menu component exists */}
         </Routes>
 
         {/* Footer */}
@@ -54,6 +53,7 @@ const HeroSection = ({ data }) => {
   
   // Only render the hero section on the root path
   if (location.pathname !== '/') return null;
+
   const handleMenuClick = () => {
     // Navigate to the /menu route
     navigate('/menu'); // Use navigate for routing
@@ -103,15 +103,6 @@ const MainContent = ({ data }) => (
       <button className="btn">Contact Us</button>
     </section>
   </main>
-);
-
-// Generic content section component
-const ContentSection = ({ data }) => (
-  <div>
-    <h1>{data.title}</h1>
-    <p>{data.description}</p>
-    <img src={data.image} alt={data.title} />
-  </div>
 );
 
 export default LandingPage;

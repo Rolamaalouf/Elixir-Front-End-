@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import LandingPage from "./LandingPage"; // Import LandingPage directly
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
