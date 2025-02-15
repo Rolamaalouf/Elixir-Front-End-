@@ -13,7 +13,7 @@ const Menu = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/menu");
+                const response = await fetch("https://elixir-repo-3.onrender.com/api/menu");
                 if (!response.ok) throw new Error("Failed to fetch menu data");
                 const data = await response.json();
                 setMenuData(data[0]); // Assuming the first object contains the necessary data

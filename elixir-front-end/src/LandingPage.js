@@ -13,7 +13,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/landing-page")
+      .get("https:/elixir-repo-3.onrender.com/api/landing-page")
       .then((response) => {
         setData(response.data);
       })
