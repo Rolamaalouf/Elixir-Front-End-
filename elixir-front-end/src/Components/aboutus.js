@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './AboutUs.css'; // Import CSS
+import Header from "./header"; // Keep Header for all routes
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 //aboutus: functional React component.
 const AboutUs = () => {
@@ -22,57 +26,86 @@ const AboutUs = () => {
         console.error("Error fetching About Us data:", error);
       });
   }, []);
+    // Slider settings
+    const sliderSettings = {
+      dots: true, 
+      infinite: true, 
+      speed: 500, 
+      slidesToShow: 1, 
+      slidesToScroll: 1,
+      autoplay: true, 
+      autoplaySpeed: 3000,
+    };
+  
 //[] means this code will run only once when the component is first loaded.
   return (
     
-    <div className="about-us-container">
+    <div className="about-us-container1">
+      <div className="head">
+      <Header /> {/* This header will be displayed on all routes */}
+      </div>
+      
       {aboutData ? (
         //aboutData ? (...) : (...): conditional rendering. loads from aboutdata, if null gives "loading"
         <>
           {/* Our Story Section */}
-          <div className="our-story">
-          <div className="storyimage">
-            <img src={aboutData.ourStory.image} alt="Our Story" />
-          </div>
-          <div className="storytitle">
-            <h1>{aboutData.ourStory.title}</h1>
-            <p>{aboutData.ourStory.content}</p>
-          </div>
-          </div>
+          <div className="our-story1">
+            <div className="storyimage1">
+                  <img src={aboutData.ourStory.image} alt="Our Story" />
+                </div>
+                <div className="storytitle1">
+                  <h1>{aboutData.ourStory.title}</h1>
+                  <p>{aboutData.ourStory.content}</p>
+                </div>
+            </div>
+            
+            {/* Gallery Section */}
+            <div className="thegallery1">
+              <h2>{aboutData.gallery.title}</h2>
+              <Slider {...sliderSettings} className="gallery-carousel">
+                {aboutData.gallery.images.map((image, index) => (
+                  <div key={index}>
+                    <img src={image} alt={`Gallery Image ${index + 1}`} className="carousel-image" />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+            <div className="all11">
+                {/* Mission Section */}
+                
+                <div className="mission1">
+                <section>
+                    <h2>{aboutData.mission.title}</h2>
+                    <p>{aboutData.mission.content}</p>
+                </section>
+                  <img src={aboutData.mission.image} alt="Mission" />
+                </div>
+
+                {/* Vision Section */}
+                <div className="vision1">
+                  <section>
+                    <h2>{aboutData.vision.title}</h2>
+                    <p>{aboutData.vision.content}</p>
+                  </section>
+                  <img src={aboutData.vision.image} alt="Vision" />
+                </div>
+
+                {/* Go Padel Section */}
+                <div className="gopadel1">
+                  <section>
+                    <h2>{aboutData.goPadel.title}</h2>
+                    <p>{aboutData.goPadel.content}</p>
+                    <button className="buttonpadel">
+                    <a href={aboutData.goPadel.buttonLink} className="go-padel-button">
+                      {aboutData.goPadel.buttonText}
+                    </a></button>
+                  </section>
+                  
+                  <img src={aboutData.goPadel.image} alt="Go Padel" />
+                </div>
+             </div>
+                
           
-          {/* Gallery Section */}
-          <div className="thegallery">
-          <h2>{aboutData.gallery.title}</h2>
-          <div className="gallery">
-            {aboutData.gallery.images.map((image, index) => (
-              <img key={index} src={image} alt={`Gallery Image ${index + 1}`} />
-            ))}
-          </div>
-
-          {/* Mission Section */}
-          <div className="mission">
-          <h2>{aboutData.mission.title}</h2>
-          <p>{aboutData.mission.content}</p>
-          <img src={aboutData.mission.image} alt="Mission" />
-          </div>
-
-          {/* Vision Section */}
-          <div className="vision">
-          <h2>{aboutData.vision.title}</h2>
-          <p>{aboutData.vision.content}</p>
-          <img src={aboutData.vision.image} alt="Vision" />
-          </div>
-
-          {/* Go Padel Section */}
-          <div className="gopadel">
-          <h2>{aboutData.goPadel.title}</h2>
-          <p>{aboutData.goPadel.content}</p>
-          <a href={aboutData.goPadel.buttonLink} className="go-padel-button">
-            {aboutData.goPadel.buttonText}
-          </a>
-          <img src={aboutData.goPadel.image} alt="Go Padel" />
-          </div>
-          </div>
         </>
       ) : (
         <p>Loading...</p> // Show loading while data is being fetched

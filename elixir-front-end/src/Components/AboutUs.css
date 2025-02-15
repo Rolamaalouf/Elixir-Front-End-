@@ -1,61 +1,282 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* General Styling for About Us Page */
-  .about-us-container {
+  .about-us-container1 {
     width: 100%;
     padding: 20px;
     background-color: #f4f4f4;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     align-items: center;
+    background: linear-gradient(to bottom, #D8D2ED, white,#D8D2ED);  /* Add the gradient */
+    gap:3%;
+    overflow: auto;  /* Add this to allow scrolling if needed */
   }
 
   /* The story*/
-  .our-story {
-    background: linear-gradient(to bottom, #D8D2ED, white);  /* Add the gradient */
-    padding: 20px;  /* Add some padding */
+  .our-story1 {
+  /* Add some padding */
     color: #333;  /* Set text color */
     border: none;
     display: grid;
     grid-template-columns: 2fr 2fr;
     height: auto; /* Maintains aspect ratio */
     max-width: 100%; /* Prevents overflow */
+    align-items: center;
+    padding-top: 8%;
+    
+
   }
-  .storytitle{
+  .storytitle1{
     align-items: center;
     text-align: center;
   }
   /* Gallery Section */
+  .thegallery1{
+    text-align: center;
+    gap:20%;
+  }
+  .gallery-carousel {
+    width: 80%; /* Adjust the width */
+    max-width: 600px; /* Set a maximum width */
+    margin: 0 auto; /* Center it */
+  }
   
+  .gallery-carousel .slick-slide {
+    display: flex; 
+    justify-content: center; /* Center images */
+    align-items: center;
+  }
+  
+  .carousel-image {
+    width: 100%; /* Make it fully responsive */
+    max-width: 600px; /* Restrict size */
+    height: 600px; /* Set a fixed height */
+    object-fit: fill; /* Show full image without cropping */
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Fix Slick Arrows */
+.slick-prev, .slick-next {
+  z-index: 10; /* Ensure they appear above images */
+  font-size: 24px; /* Adjust icon size */
+  color: black; /* Make them visible */
+}
+
+.slick-prev {
+  left: -40px; /* Move left arrow slightly left */
+}
+
+.slick-next {
+  right: -40px; /* Move right arrow slightly right */
+}
+
+.slick-prev:before, .slick-next:before {
+  color: black !important; /* Force black arrows */
+}
+
   /* Mission, Vision, and Go Padel */
+
+
+.all11 {
+  position: relative;
+  display: flex; /* ✅ Added flexbox for alignment */
+  flex-direction: column; /* ✅ Ensure sections stack */
+  gap: 15%; /* Now this works! */
+  align-items: center; /* ✅ Center everything horizontally */
+}
+.section {
+  width: 70%;
+  padding: 40px;
+  text-align: center;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 0 auto 100px auto; /* ✅ Centered horizontally */
+}
+.mission1, .vision1, .gopadel1 {
+  display: flex;  /* ✅ Make the section a flex container */
+  justify-content: space-between;  /* ✅ Space out text and image */
+  align-items: center;  /* ✅ Align items vertically */
+  width: 80%; 
+  max-width: 600px;
+  background-color: white;
+  text-align: center;
+  padding: 50px 40px;
+  position: relative; /* ✅ Needed for absolute positioning of the image */
   
+}
+
+
+.mission1 {
+  border: 2px solid #C3A3EC;
+  box-shadow: 0 6px 15px #C3A3EC;
+  background-color: white;
+  align-self: center; /* ✅ Proper alignment */
+  width: 80%; /* ✅ Consistent width */
+  max-width: 600px;
+  align-self: flex-start; /* ✅ Moved to the left */
+  box-shadow: -3px -4px 0 1px  #C3A3EC; /*left up*/
+}
+
+.vision1 {
+  border: 2px solid #A3D5EC;
+  box-shadow: 0 6px 15px #A3D5EC;
+  background-color: white;
+  align-self: center; /* ✅ Proper alignment */
+  width: 80%;
+  max-width: 600px;
+  align-self: flex-end; /* ✅ Moved to the right */
+  box-shadow: 3px -4px 0 1px  #A3D5EC; /*left up*/
+}
+
+.gopadel1 {
+  border: 2px solid #C3A3EC;
+  box-shadow: 0 6px 15px #C3A3EC;
+  background-color: white;
+  align-self: center; /* ✅ Proper alignment */
+  width: 80%;
+  max-width: 600px;
+  align-self: flex-start; /* ✅ Moved to the left */
+  box-shadow: -3px 4px 0 1px  #C3A3EC; /*left up*/
+}
+.mission1 img, .vision1 img, .gopadel1 img {
+  width: 120px;  /* ✅ Adjust image size */
+  height: auto;
+  position: absolute; /* ✅ Allows it to be positioned exactly */
+  right: -60px;  /* ✅ Moves the image slightly outside for edge effect */
+  top: 50%;
+  transform: translateY(-50%); /* ✅ Centers it vertically */
+}
+/*For alternating positions (Mission = Left, Vision = Right, Go Padel = Left), flip the image position for .vision1:*/
+.vision1 img {
+  left: -60px; /* ✅ Moves image to the left instead */
+  right: auto;
+}
+.buttonpadel{
+  padding: 10px 15px;
+  background-color: #BFE0EE;
+  border: none;
+  box-shadow: 3px 4px 0 1px  #5F687C;
+  cursor: pointer;
+  color: white;
+}
+.mission1 p,.vision1 p,.gopadel1 p {
+  margin-top: 10px; /* ✅ Adds space above the paragraph */
+}
+.gopadel1 p {
+  margin-bottom: 10px; /* ✅ Adds space above the paragraph */
+}
+.mission1 h1,.vision1 h1,.gopadel1 h1 {
+  margin-bottom: 10px;  /* ✅ Adds space below h1 */
+}
+
   /* Responsive Design */
-  @media (max-width: 768px) {
-    .about-us-container {
+  @media (max-width: 480px) {
+    /* About Us Page Container */
+    .about-us-container1 {
       padding: 10px;
     }
   
-    h1 {
-      font-size: 30px;
+    /* General Header and Section Titles */
+    h1, h2 {
+      font-size: 20px;  /* Make titles smaller for phone screens */
+      margin-bottom: 10px;
     }
   
-    h2 {
-      font-size: 24px;
+    /* Our Story Section */
+    .our-story1 {
+      display: flex;
+      flex-direction: column;  /* Stack content vertically */
+      padding-top: 10%;
+      gap: 15px;  /* Add spacing between elements */
     }
   
-    .our-story img, .mission img, .vision img, .go-padel img {
-      max-width: 100%;
+    .our-story1 img {
+      width: 100%;  /* Make images full width */
+      max-height: 250px; /* Control image height */
+      object-fit: cover;  /* Ensure images scale without distortion */
+      margin-top: 10px;
     }
   
-    .gallery .carousel {
-      flex-direction: row;
-      gap: 10px;
+    /* Mission, Vision, Go Padel Sections */
+    .mission1, .vision1, .gopadel1 {
+      width: 100%;  /* Make sections take full width */
+      padding: 20px;  /* Add padding for mobile */
+      flex-direction: column;  /* Stack content vertically */
+      align-items: center;  /* Center elements horizontally */
+      margin-bottom: 20px;  /* Add space between sections */
     }
   
-    .gallery .carousel img {
-      width: 100%;
+    .mission1 img, .vision1 img, .gopadel1 img {
+      position: relative;  /* Revert to relative positioning */
+      left: 0;
+      right: 0;
+      transform: none;
+      margin-top: 15px;  /* Add space between image and text */
+      max-width: 100px;  /* Ensure images are not too big */
     }
   
-    .go-padel button {
-      width: 100%;
+    /* Adjust Button Padding */
+    .buttonpadel {
+      width: 100%;  /* Make the button full width */
+      padding: 12px;
+      font-size: 16px;
+      box-shadow: none;  /* Remove shadow on mobile for simplicity */
+    }
+  
+    /* Gallery Carousel */
+    .gallery-carousel {
+      width: 100%;  /* Full width */
+      margin: 0 auto;  /* Center gallery */
+    }
+  
+    .carousel-image {
+      width: 100%;  /* Full width images */
+      height: auto;  /* Ensure images keep aspect ratio */
+      max-height: 300px; /* Limit height to avoid overflow */
+    }
+  
+    /* Carousel Arrows */
+    .slick-prev, .slick-next {
+      font-size: 20px; /* Smaller arrows */
+      color: black;    /* Ensure visibility */
+    }
+  
+    /* Ensure no horizontal scrolling */
+    html, body {
+      overflow-x: hidden;
     }
   }
- 
+  
+  @media (max-width: 768px) {
+    /* Adjust for phones and smaller tablets */
+    .about-us-container1 {
+      padding: 10px;
+    }
+  
+    .our-story1 {
+      flex-direction: column;  /* Stack items for phones */
+    }
+  
+    .mission1, .vision1, .gopadel1 {
+      width: 100%;  /* Make sections full-width */
+      padding: 20px;  /* Reduce padding for smaller screens */
+    }
+  
+    .mission1 img, .vision1 img, .gopadel1 img {
+      width: 80px; /* Smaller images */
+    }
+  
+    .gallery-carousel {
+      width: 100%;  /* Full-width for gallery */
+      max-width: none;
+    }
+  }
+  

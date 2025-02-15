@@ -63,7 +63,7 @@ const ContactUs = () => {
             required
           ></textarea>
           </div>
-          <button type="submit" >
+          <button className="button1" type="submit" >
           Sip & Send
           </button>
          </form>
