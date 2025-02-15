@@ -7,6 +7,7 @@ import ball from "./Assets/ball.png";
 import { useNavigate } from "react-router-dom";
 import Menu from "./Menu";
 
+
 const LandingPage = () => {
   const [data, setData] = useState(null);
 
