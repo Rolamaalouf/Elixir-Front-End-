@@ -1,14 +1,20 @@
-.contactus{
-    display: grid;
-    grid-template-columns: 1fr; /* Single column on mobile */
-    justify-items: center;
-    align-items: center;
-    height: auto;
-    padding: 20px;
-    background-color: #f8f9fa;
-    gap: 20px; 
-    background: linear-gradient(to bottom, #D8D2ED, white, #D8D2ED);
-    height: 100vh;
+/* Ensure the gradient applies only to Contact Us */
+.contactus-page {
+  min-height: 100vh; /* Full page height */
+  width: 100vw; /* Full viewport width */
+  background: linear-gradient(to bottom, #D8D2ED, white, #D8D2ED) ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure Contact Us content does not inherit other styles */
+.contactus {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .getintouch {
     display: grid;

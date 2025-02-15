@@ -6,6 +6,8 @@ import Header from "./Components/header"; // Keep Header for all routes
 import ball from "./Assets/ball.png";
 import { useNavigate } from "react-router-dom";
 import Menu from "./Menu";
+import AboutUs from "./aboutus";
+import ContactUs from "./contactus"
 
 
 const LandingPage = () => {
@@ -38,6 +40,8 @@ const LandingPage = () => {
         <Routes>
           <Route path="/" element={<MainContent data={data} />} />
           <Route path="/menu" element={<Menu />} /> {/* Assuming Menu component exists */}
+          <Route path="/about" element={<AboutUs />} />  {/* AboutUs Route */}
+          <Route path="/contact" element={<ContactUs />} />  {/* ContactUs Route */}
         </Routes>
 
         {/* Footer */}
