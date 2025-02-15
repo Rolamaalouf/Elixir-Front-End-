@@ -5,6 +5,7 @@ import LandingPage from "./LandingPage"; // Import LandingPage directly
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Router and Routes
 import AboutUs from "./Components/aboutus.js"; // Import AboutUs Page
+import ContactUs from "./contactus.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,6 +15,7 @@ root.render(
         {/* Define Routes */}
         <Route path="/" element={<LandingPage />} />  {/* LandingPage Route */}
         <Route path="/about-us" element={<AboutUs />} />  {/* AboutUs Route */}
+        <Route path="/contact-us" element={<ContactUs />} />  {/* ContactUs Route */}
       </Routes>
     </Router>
   </React.StrictMode>

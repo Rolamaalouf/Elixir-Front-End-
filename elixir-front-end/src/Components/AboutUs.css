@@ -5,6 +5,7 @@
     background-color: #f4f4f4;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    align-items: center;
   }
 
   /* The story*/

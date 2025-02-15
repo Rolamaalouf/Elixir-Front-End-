@@ -24,6 +24,7 @@ const AboutUs = () => {
   }, []);
 //[] means this code will run only once when the component is first loaded.
   return (
+    
     <div className="about-us-container">
       {aboutData ? (
         //aboutData ? (...) : (...): conditional rendering. loads from aboutdata, if null gives "loading"
