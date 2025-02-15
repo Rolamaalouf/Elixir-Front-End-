@@ -82,7 +82,7 @@ const Menu = () => {
 
                     {/* Column 2: Images of Coffee and Iced Latte Categories */}
                     <div className="menu-column">
-                        <h3>Images</h3>
+                        <h3>Coffee and more</h3>
                         {menuData.menuCategories.find(category => category.categoryName === "Coffee")?.image && (
                             <img src={menuData.menuCategories.find(category => category.categoryName === "Coffee")?.image} alt="Coffee" />
                         )}
@@ -122,7 +122,7 @@ const Menu = () => {
 
                     {/* Column 2: Images of Mocktails and Milkshakes */}
                     <div className="menu-column">
-                        <h3>Images</h3>
+                        <h3>Mocktails and more</h3>
                         {menuData.menuCategories.find(category => category.categoryName === "Mocktails")?.image && (
                             <img src={menuData.menuCategories.find(category => category.categoryName === "Mocktails")?.image} alt="Mocktails" />
                         )}

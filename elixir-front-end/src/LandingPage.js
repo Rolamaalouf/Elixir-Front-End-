@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Menu from "./Menu";
 import AboutUs from "./aboutus";
 import ContactUs from "./contactus"
+import Footer from "./Components/footer";
 
 
 const LandingPage = () => {
@@ -45,7 +46,7 @@ const LandingPage = () => {
         </Routes>
 
         {/* Footer */}
-        <footer>Elixir</footer>
+        <Footer />
       </div>
     </Router>
   );
