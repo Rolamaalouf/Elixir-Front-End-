@@ -1,0 +1,60 @@
+/* General Styling for About Us Page */
+  .about-us-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  /* The story*/
+  .our-story {
+    background: linear-gradient(to bottom, #D8D2ED, white);  /* Add the gradient */
+    padding: 20px;  /* Add some padding */
+    color: #333;  /* Set text color */
+    border: none;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; /* Prevents overflow */
+  }
+  .storytitle{
+    align-items: center;
+    text-align: center;
+  }
+  /* Gallery Section */
+  
+  /* Mission, Vision, and Go Padel */
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-us-container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 30px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    .our-story img, .mission img, .vision img, .go-padel img {
+      max-width: 100%;
+    }
+  
+    .gallery .carousel {
+      flex-direction: row;
+      gap: 10px;
+    }
+  
+    .gallery .carousel img {
+      width: 100%;
+    }
+  
+    .go-padel button {
+      width: 100%;
+    }
+  }
+ 

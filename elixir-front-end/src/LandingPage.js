@@ -6,6 +6,7 @@ import Header from "./Components/header"; // Keep Header for all routes
 import ball from "./Assets/ball.png"
 import {useNavigate } from "react-router-dom";
 
+
 const LandingPage = () => {
   const [data, setData] = useState(null);
 
