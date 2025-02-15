@@ -22,10 +22,9 @@ body {
   padding: 50px;
   color: black;
   text-align: left;
-  background-size: cover;
-  background-position: center;
   background: linear-gradient(to bottom, #C8E5F1 20%, white 50%);
-  }
+}
+
 /* Hero Content - Left Side */
 .head-content {
   max-width: 50%;
@@ -38,10 +37,9 @@ body {
   margin-bottom: 10px;
 }
 
-.head-content h2 {
-  font-size: 1.8rem;
-  font-weight: 300;
-  margin-bottom: 20px;
+.head-content p {
+  font-size: 1.2rem; /* Paragraph styling */
+  margin-top: 10px;
 }
 
 /* Hero Image - Right Side */
@@ -55,16 +53,62 @@ body {
 
 /* --- Best Sellers Section --- */
 .best-sellers {
+  text-align: center; /* Center the title */
+  margin: 80px auto;
+}
+
+.best-sellers h2 {
+  font-size: 2rem; /* Adjust title size */
+  margin-bottom: 30px; /* Space below the title */
+}
+
+.best-seller-list {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin: 80px auto;
   flex-wrap: wrap; /* Ensure responsiveness */
   max-width: 80%;
+  margin: 0 auto;
 }
 
-.best-sellers .box {
+.best-sellers .best-seller-item {
   width: 280px;
+  height: 200px;
+  margin: 60px;
+  padding: 70px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative; /* Allow for positioning of the image outside */
+}
+
+.best-sellers .best-seller-item img {
+  width: 100%;
+  border-radius: 10px;
+  position: absolute; /* Position the image absolutely */
+  top: 40%; /* Move the image out of the box */
+  left: 50%; /* Center the image */
+  transform: translateX(-50%); /* Adjust centering */
+}
+
+/* Hover effect */
+.best-sellers .best-seller-item:hover {
+  transform: scale(1.05);
+}
+
+/* Shadow Effects */
+.best-sellers .best-seller-item:nth-child(1) {
+  box-shadow: 0px 8px 20px rgba(128, 0, 128, 0.6); /* Purple shadow */
+}
+
+.best-sellers .best-seller-item:nth-child(2) {
+  box-shadow: 0px 8px 20px rgba(0, 0, 255, 0.6); /* Blue shadow */
+}
+
+
+.best-sellers .best-seller-item {
+  width: 280px; /* Width of the box */
   padding: 20px;
   border-radius: 15px;
   text-align: center;
@@ -72,43 +116,104 @@ body {
   transition: transform 0.3s ease;
 }
 
-.best-sellers .box img {
+/* Specific styles for each image */
+.best-seller-item img.image1 {
   width: 100%;
-  border-radius: 10px;
+  height: 150px; /* Specific height for first image */
+  border-radius: 10px; /* Style for first image */
+}
+
+.best-seller-item img.image2 {
+  width: 75%;
+  top: 20%;
+  height: 200px; /* Specific height for second image */
+  border-radius: 10px; /* Style for second image */
 }
 
 /* Hover effect */
-.best-sellers .box:hover {
+.best-sellers .best-seller-item:hover {
   transform: scale(1.05);
 }
-
-/* Shadow Effects */
-.best-sellers .box:nth-child(1) {
-  box-shadow: 0px 8px 20px rgba(128, 0, 128, 0.6); /* Purple shadow */
-}
-
-.best-sellers .box:nth-child(2) {
-  box-shadow: 0px 8px 20px rgba(0, 0, 255, 0.6); /* Blue shadow */
-}
-
 /* --- Menu Categories Section --- */
 .menu-categories {
   display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 50px;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  max-width: 90%;
-  margin: auto;
+  flex-direction: column; /* Stack sections vertically */
+  margin: 50px auto; /* Space above the section and center */
+  max-width: 90%; /* Maximum width */
+}
+
+/* Section Styles */
+.menu-section {
+  display: flex; /* Flex for column layout */
+  gap: 20px; /* Space between columns */
+  margin-bottom: 50px; /* Space below each section */
+}
+
+/* Column Styling */
+.menu-column {
+  flex: 1; /* Equal space for each column */
+  padding: 20px; /* Padding inside columns */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* First Section Styles */
+.first-section {
+  border-top: 5px solid purple; /* Purple border on top */
+  border-left: 5px solid purple; /* Purple border on left */
+  box-shadow: 0 4px 20px rgba(128, 0, 128, 0.5); /* Purple shadow */
+  display: flex; /* Allow for 3 columns */
+}
+
+/* Second Section Styles */
+.second-section {
+  border-right: 5px solid blue; /* Blue border on right */
+  border-bottom: 5px solid blue; /* Blue border on bottom */
+  box-shadow: 0 4px 20px rgba(0, 0, 255, 0.5); /* Blue shadow */
+  display: flex; /* Allow for 3 columns */
+}
+
+/* Category Titles */
+.menu-column h3 {
+  font-size: 1.5rem; /* Increase font size for category names */
+  margin-bottom: 10px; /* Space below category titles */
+}
+
+/* Menu Item List */
+.menu-column ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+.menu-item {
+  display: flex; /* Flex layout for menu items */
+  justify-content: space-between; /* Space between item name and price */
+  margin: 10px 0; /* Space between each menu item */
 }
 
 /* Menu Category Containers */
-
-.menu-container img {
-  width: 100%;
-  border-radius: 10px;
+.menu-column img {
+  width: 50%; /* Make images fill the column width */
+  border-radius: 10px; /* Rounded corners for images */
+  margin: 10px 0; /* Space between images */
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .menu-section {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-column h3 {
+    font-size: 1.2rem; /* Smaller font size for category names */
+  }
+
+  .menu-item {
+    flex-direction: column; /* Stack item name and price on smaller screens */
+    align-items: center; /* Center align text */
+  }
+}
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
   .head {
@@ -127,10 +232,6 @@ body {
     margin-top: 20px;
   }
 
-  .menu-categories {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 @media (max-width: 768px) {
@@ -147,7 +248,4 @@ body {
     align-items: center;
   }
 
-  .menu-container {
-    max-width: 90%;
-  }
 }

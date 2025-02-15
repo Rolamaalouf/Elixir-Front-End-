@@ -1,61 +1,149 @@
 import React, { useEffect, useState } from "react";
-import "./Menu.css"; // Import the pure CSS file
+import "./Menu.css"; // Import the CSS file
 
 const Menu = () => {
-    const [menuData, setMenuData] = useState(null);
+    const [menuData, setMenuData] = useState({
+        bestSellers: [],
+        menuCategories: [],
+        heroSection: {}
+    });
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Simulating fetching data from API
         const fetchData = async () => {
-            const data = await fetch("http://localhost:5000/api/menu") // Replace with your real API
-                .then((res) => res.json())
-                .catch((err) => console.error(err));
-
-            setMenuData(data[0]); // Assuming the first object contains data
+            try {
+                const response = await fetch("http://localhost:5000/api/menu");
+                if (!response.ok) throw new Error("Failed to fetch menu data");
+                const data = await response.json();
+                setMenuData(data[0]); // Assuming the first object contains the necessary data
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
         };
-
         fetchData();
     }, []);
 
-    if (!menuData) return <p>Loading...</p>;
+    if (loading) return <p className="loading">Loading menu...</p>;
+    if (error) return <p className="error">Error: {error}</p>;
 
     return (
         <div className="menu-container">
             {/* Hero Section */}
             <section className="head">
-                <img src={menuData.heroSection.image} alt="Head" className="head-image" />
-                <p className="head-text">{menuData.heroSection.paragraph}</p>
+                <div className="head-content">
+                    <h1>Elixir Me-nu</h1>
+                    <p>{menuData.heroSection?.paragraph}</p>
+                </div>
+                <img src={menuData.heroSection?.image} alt="Delicious food" className="head-image" />
             </section>
 
             {/* Best Sellers Section */}
             <section className="best-sellers">
                 <h2>Best Sellers</h2>
                 <div className="best-seller-list">
-                    {menuData.bestSellers.map((item) => (
-                        <div key={item._id} className="best-seller-item">
-                            <img src={item.image} alt={item.description} />
-                            <p>{item.description}</p>
-                        </div>
-                    ))}
+                    {Array.isArray(menuData.bestSellers) && menuData.bestSellers.length > 0 ? (
+                        menuData.bestSellers.map((item, index) => (
+                            <div key={item._id} className="best-seller-item">
+                                <img 
+                                    src={item.image} 
+                                    alt={item.description} 
+                                    className={index === 0 ? "image1" : "image2"} // Assign different classes based on index
+                                />
+                                <p>{item.description}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No best sellers available.</p>
+                    )}
                 </div>
             </section>
 
-            {/* Menu Categories */}
+            {/* Menu Categories Section */}
             <section className="menu-categories">
                 <h2>Our Menu</h2>
-                {menuData.menuCategories.map((category) => (
-                    <div key={category._id} className="category">
-                        <h3>{category.categoryName}</h3>
-                        <img src={category.image} alt={category.categoryName} className="category-image" />
+
+                {/* First Section: Coffee and Iced Latte */}
+                <div className="menu-section first-section">
+                    {/* Column 1: Coffee Categories */}
+                    <div className="menu-column">
+                        <h3>Coffee</h3>
                         <ul>
-                            {category.items.map((item) => (
-                                <li key={item._id}>
-                                    {item.name} - <span>${item.price.toFixed(2)}</span>
+                            {Array.isArray(menuData.menuCategories) && menuData.menuCategories.find(category => category.categoryName === "Coffee")?.items.map((item) => (
+                                <li key={item._id} className="menu-item">
+                                    <span className="item-name">{item.name}</span>
+                                    <span className="item-price">${item.price.toFixed(2)}</span>
                                 </li>
                             ))}
                         </ul>
                     </div>
-                ))}
+
+                    {/* Column 2: Images of Coffee and Iced Latte Categories */}
+                    <div className="menu-column">
+                        <h3>Images</h3>
+                        {menuData.menuCategories.find(category => category.categoryName === "Coffee")?.image && (
+                            <img src={menuData.menuCategories.find(category => category.categoryName === "Coffee")?.image} alt="Coffee" />
+                        )}
+                        {menuData.menuCategories.find(category => category.categoryName === "Iced Latte or Not")?.image && (
+                            <img src={menuData.menuCategories.find(category => category.categoryName === "Iced Latte or Not")?.image} alt="Iced Latte" />
+                        )}
+                    </div>
+
+                    {/* Column 3: Iced Latte or Not Categories */}
+                    <div className="menu-column">
+                        <h3>Iced Latte or Not</h3>
+                        <ul>
+                            {Array.isArray(menuData.menuCategories) && menuData.menuCategories.find(category => category.categoryName === "Iced Latte or Not")?.items.map((item) => (
+                                <li key={item._id} className="menu-item">
+                                    <span className="item-name">{item.name}</span>
+                                    <span className="item-price">${item.price.toFixed(2)}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Second Section: Mocktails and Milkshakes */}
+                <div className="menu-section second-section">
+                    {/* Column 1: Mocktails Categories */}
+                    <div className="menu-column">
+                        <h3>Mocktails</h3>
+                        <ul>
+                            {Array.isArray(menuData.menuCategories) && menuData.menuCategories.find(category => category.categoryName === "Mocktails")?.items.map((item) => (
+                                <li key={item._id} className="menu-item">
+                                    <span className="item-name">{item.name}</span>
+                                    <span className="item-price">${item.price.toFixed(2)}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Column 2: Images of Mocktails and Milkshakes */}
+                    <div className="menu-column">
+                        <h3>Images</h3>
+                        {menuData.menuCategories.find(category => category.categoryName === "Mocktails")?.image && (
+                            <img src={menuData.menuCategories.find(category => category.categoryName === "Mocktails")?.image} alt="Mocktails" />
+                        )}
+                        {menuData.menuCategories.find(category => category.categoryName === "Milkshakes")?.image && (
+                            <img src={menuData.menuCategories.find(category => category.categoryName === "Milkshakes")?.image} alt="Milkshakes" />
+                        )}
+                    </div>
+
+                    {/* Column 3: Milkshake Categories */}
+                    <div className="menu-column">
+                        <h3>Milkshakes</h3>
+                        <ul>
+                            {Array.isArray(menuData.menuCategories) && menuData.menuCategories.find(category => category.categoryName === "Milkshakes")?.items.map((item) => (
+                                <li key={item._id} className="menu-item">
+                                    <span className="item-name">{item.name}</span>
+                                    <span className="item-price">${item.price.toFixed(2)}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
             </section>
         </div>
     );
