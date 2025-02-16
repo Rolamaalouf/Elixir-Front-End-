@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import './AboutUs.css';
-import 'swiper/swiper-bundle.min.css'; // Ensure the swiper styles are imported
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
