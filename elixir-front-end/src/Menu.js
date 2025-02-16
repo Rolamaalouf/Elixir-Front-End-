@@ -142,6 +142,15 @@ const Menu = () => {
                                 </li>
                             ))}
                         </ul>
+                        <h3>Refreshments</h3>
+                        <ul>
+                            {Array.isArray(menuData.menuCategories) && menuData.menuCategories.find(category => category.categoryName === "Refreshments")?.items.map((item) => (
+                                <li key={item._id} className="menu-item">
+                                    <span className="item-name">{item.name}</span>
+                                    <span className="item-price">${item.price.toFixed(2)}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>

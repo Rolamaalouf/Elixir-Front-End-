@@ -98,7 +98,7 @@ const MainContent = ({ data }) => {
 
   return (
     <main className="main">
-      <h1>{data.mainSection.tagline}</h1>
+      <h3>{data.mainSection.tagline}</h3>
       <section className="section our-menu">
         <h2>{data.mainSection.ourMenu.title}</h2>
         <p>{data.mainSection.ourMenu.description}</p>

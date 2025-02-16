@@ -5,11 +5,16 @@
   box-sizing: border-box;
 }
 
+.storyimage1{
+  margin-left: 40px;
+}
+
 /* General Styling for About Us Page */
 .about-us-container1 {
   width: 100%;
+  min-height: 100px;
   padding: 20px;
-  background: linear-gradient(to bottom, #D8D2ED, white, #D8D2ED);
+  background: linear-gradient(to bottom, #D8D2ED, white);
   display: grid;
   gap: 3%;
   overflow: auto;
@@ -100,6 +105,7 @@
   border: 2px solid #C3A3EC;
   box-shadow: -3px 4px 0 1px #C3A3EC;
   align-self: flex-start;
+  margin-bottom: 300px;
 }
 
 .mission1 img, .vision1 img, .gopadel1 img {

@@ -2,7 +2,8 @@
 .contactus-page {
   min-height: 100vh; /* Full page height */
   width: 100vw; /* Full viewport width */
-  background: linear-gradient(to bottom, #D8D2ED, white, #D8D2ED) ;
+  background: linear-gradient(to bottom, #D8D2ED, white) !important ;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +34,7 @@
 
 
 .getintouch .header2 h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 20px; /* Add space between the header and the form */
   }
@@ -96,7 +97,7 @@ input {
     margin-top: 30px;
     justify-items: center; /* Center the content horizontally */
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     height: auto; /* Adjust height based on content */
     box-shadow: 0 6px 15px #BFE0EE;
     background: #fff;
@@ -106,11 +107,13 @@ input {
     grid-template-columns: 1fr; 
     justify-content: start;
     align-content: space-around;
-    align-items: baseline;
+    align-items: center;
     justify-items: stretch;
+    margin-bottom: 100px;
     
     
   }
   .location h2 {
-    text-align: left; 
+    text-align: center; 
+    font-size: 4rem;
   }

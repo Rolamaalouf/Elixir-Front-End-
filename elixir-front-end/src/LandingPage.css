@@ -21,7 +21,10 @@
   margin-top: 0; /* Optional: to remove any space above */
   padding-top: 20px; /* Adjust to elevate the title */
 }
-
+.main h3{
+  font-size: 50px;
+  font-style: italic;
+}
 .landing-page h2 {
   font-size: 70px;
   align-items: flex-start;
@@ -101,7 +104,7 @@
   width: 100%;
   gap: 120px; /* Space between sections */
   margin-top: 100px;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
 }
 
 .main h1 {
@@ -116,9 +119,9 @@
     text-align: center;
     position: relative;
     background: white;
-    border-radius: 15px;
+    border-radius: 0px !important;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 
   /* Section Alignment */
@@ -185,3 +188,35 @@
     height: auto; /* Maintain aspect ratio */
   }
 
+.our-story .btn{
+  background-color: #C3A3EC;
+}
+/* Hero Section */
+.hero {
+  position: relative;             /* Ensure the hero section is the positioning context */
+  height: 100vh;                 /* Full height hero section */
+  background-size: cover;        /* Cover the entire section */
+  background-position: center;    /* Center the background image */
+  overflow: hidden;              /* Hide overflow to prevent pseudo-element from showing outside */
+}
+
+/* Add a pseudo-element for the blurred edges */
+.hero::before {
+  content: '';                   /* Necessary for pseudo-elements */
+  position: absolute;            /* Position it absolutely within the hero */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;          /* Inherit the background properties */
+  z-index: 0;                   /* Place it behind the content */
+  pointer-events: none;         /* Prevent interaction with the pseudo-element */
+  filter: blur(20px);           /* Apply the blur effect */
+  mask-image: radial-gradient(circle, transparent 50%, black 100%); /* Create a mask to control blur */
+}
+
+.hero .hero-content {
+  position: relative;            /* Position content relative to the hero */
+  z-index: 1;                   /* Ensure content is above the blurred background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: text shadow for contrast */
+}

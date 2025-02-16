@@ -18,6 +18,8 @@ export default function Footer() {
   return (
     <footer className="footer">
       {/* Subscribe Input */}
+      <div className="footer-form">
+      <p>Subscribe</p>
       <input
         type="email"
         placeholder="Enter your email"
@@ -26,7 +28,7 @@ export default function Footer() {
         onKeyDown={handleSubmit}
         className="subscribe-input"
       />
-
+       </div>
       {/* Logo */}
       <div className="logo-container">
         <img src={logo} alt="Elixir Logo" className="footer-logo" />

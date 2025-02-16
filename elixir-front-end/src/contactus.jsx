@@ -72,7 +72,7 @@ const ContactUs = () => {
 
       {/* Location Section */}
       <div className="location">
-        <h2>Our Location</h2>
+        <h2>Location</h2>
         <div>
         <iframe
       title="Google Maps"
