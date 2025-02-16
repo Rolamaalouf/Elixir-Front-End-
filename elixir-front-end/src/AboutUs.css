@@ -2,39 +2,27 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .storyimage1{
-  margin-left: 40px;
+  margin-left: 0px;
 }
 
 /* General Styling for About Us Page */
 .about-us-container1 {
   width: 100%;
-  min-height: 100px;
-  padding: 20px;
-  background: linear-gradient(to bottom, #D8D2ED, white);
+  min-height: 100vh;
+  padding: 0;        /* Remove padding if you want the background to touch the edges */
   display: grid;
   gap: 3%;
   overflow: auto;
 }
 
-/* Our Story Section */
-.our-story1 {
-  display: grid;
-  grid-template-columns: 2fr 2fr;
-  align-items: center;
-  padding-top: 8%;
-}
-.storytitle1 {
-  text-align: center;
-}
 
 /* Gallery Section */
 .thegallery1 {
+  margin-top: -100px;
   text-align: center;
-  gap: 20%;
 }
 .gallery-carousel {
   width: 80%;
@@ -44,7 +32,7 @@
 .carousel-image {
   width: 100%;
   max-width: 600px;
-  height: 600px;
+  height: 500px;
   object-fit: fill;
   border-radius: 10px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -82,7 +70,7 @@
   justify-content: space-between;
   align-items: center;
   width: 80%;
-  max-width: 600px;
+  max-width: 1000px;
   background-color: white;
   text-align: center;
   padding: 50px 40px;
@@ -98,7 +86,7 @@
 .vision1 {
   border: 2px solid #A3D5EC;
   box-shadow: 3px -4px 0 1px #A3D5EC;
-  align-self: flex-end;
+  align-self: flex-end; 
 }
 
 .gopadel1 {
@@ -151,5 +139,84 @@
   }
   .gallery-carousel {
     width: 100%;
+  }
+}
+.all11 {
+  position: relative; /* Keeps .vision1 positioned within this container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+  margin-bottom: 50px;
+
+}
+
+.vision1 {
+  border: 2px solid #A3D5EC;
+  box-shadow: 3px -4px 0 1px #A3D5EC;
+  width: 90%; /* Increase width */
+  height: 200px; /* Increase height */
+  position: absolute; /* Position it above the other sections */
+  top: 80px; /* Move it up without affecting others */
+  z-index: 1; /* Ensures it stays above */
+}
+
+.mission1 {
+  position: relative; /* Keeps them in normal flow */
+  z-index: 0; /* Ensures they stay below */
+  top: -100px;
+}
+.gopadel1 {
+  position: relative; /* Keeps them in normal flow */
+  z-index: 0; /* Ensures they stay below */
+  top: 20px;
+}
+.our-story1 {
+  display: grid; /* Ensure grid layout */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to bottom, #D8D2ED, white);
+  padding: 8% 5%;
+  gap: 3%;
+}
+
+.storytext1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.storyimage1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.storyimage1 img {
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .our-story1 {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+    text-align: center;
+  }
+
+  .storyimage1 {
+    order: -1; /* Move image above text on mobile */
+  }
+
+  .storyimage1 img {
+    max-width: 100%;
   }
 }

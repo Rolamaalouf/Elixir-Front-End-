@@ -44,8 +44,8 @@ const Menu = () => {
             <section className="best-sellers">
                 <h2>Best Sellers</h2>
                 <div className="best-seller-list">
-                    {Array.isArray(menuData.bestSellers) && menuData.bestSellers.length > 0 ? (
-                        menuData.bestSellers.map((item, index) => (
+                    {Array.isArray(menuData.bestSellers) && menuData.bestSellers.length > 0 ? (  //This checks if menuData.bestSellers is an arrayand has any elements
+                        menuData.bestSellers.map((item, index) => (   //map over array and for each element creates a new div 
                             <div key={item._id} className="best-seller-item">
                                 <img 
                                     src={item.image} 

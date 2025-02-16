@@ -4,53 +4,55 @@
   padding: 0;
   box-sizing: border-box;
 }
-*menu-container{
-  background: linear-gradient(180deg, #C8E5F1 0%, #C8E5F1 50%, #FFFFFF 50%, #FFFFFF 100%);
-}
+
 /* Body */
 body {
   font-family: inter, sans-serif;
 
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-
 /* --- Hero Section --- */
 .head {
   position: relative;
   height: 80vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Center both text and image */
   padding: 50px;
   color: black;
-  text-align: left;
+  text-align: center; /* Center text */
   background: linear-gradient(to bottom, #C8E5F1 20%, white 50%);
+  gap: 30px; /* Adds space between text and image */
 }
 
 /* Hero Content - Left Side */
 .head-content {
-  max-width: 50%;
+  max-width: 45%; /* Reduce width for better centering */
   text-align: center;
-}
-
-.head-content h1 {
-  font-size: 4.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.head-content p {
-  font-size: 1.2rem; /* Paragraph styling */
-  margin-top: 10px;
 }
 
 /* Hero Image - Right Side */
 .head img {
-  max-width: 50%;
+  max-width: 45%; /* Reduce width for better balance */
   height: auto;
-  position: relative;
-  top: 20px;
   border-radius: 10px;
+  align-self: center; /* Ensures image stays centered */
+}
+
+/* Responsive Fix */
+@media (max-width: 1024px) {
+  .head {
+    flex-direction: column; /* Stack text and image */
+    height: auto;
+  }
+
+  .head-content, .head img {
+    max-width: 80%; /* Make content take more width */
+  }
+
+  .head img {
+    margin-top: 20px; /* Add space between text and image */
+  }
 }
 
 /* --- Best Sellers Section --- */
@@ -60,7 +62,7 @@ body {
 }
 
 .best-sellers h2 {
-  font-size: 2rem; /* Adjust title size */
+  font-size: 3rem; /* Adjust title size */
   margin-bottom: 30px; /* Space below the title */
 }
 
@@ -140,6 +142,7 @@ body {
   display: flex;
   flex-direction: column; /* Stack sections vertically */
   margin: 50px auto; /* Space above the section and center */
+  margin-bottom: 150px;
   max-width: 90%; /* Maximum width */
 }
 .menu-categories h2{

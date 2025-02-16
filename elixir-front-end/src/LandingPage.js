@@ -9,6 +9,7 @@ import Menu from "./Menu";
 import AboutUs from "./aboutus";
 import ContactUs from "./contactus";
 import Footer from "./Components/footer";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const [data, setData] = useState(null);
@@ -53,7 +54,7 @@ const LandingPage = () => {
 
 // Hero section component
 const HeroSection = ({ data }) => {
-  const location = useLocation();
+  const location = useLocation(); //access the current location object 
   const navigate = useNavigate(); // Use useNavigate for navigation
   
   // Only render the hero section on the root path
@@ -91,9 +92,9 @@ const MainContent = ({ data }) => {
     const link = document.createElement("a");
     link.href = `${process.env.PUBLIC_URL}/menu.jpeg`; // Use PUBLIC_URL to access the public folder
     link.download = "menu.jpeg"; // Set the file name when downloaded
-    document.body.appendChild(link);
+    document.body.appendChild(link); //appending link to body 
     link.click();
-    document.body.removeChild(link);
+    document.body.removeChild(link); //to ensure DOM remain clean 
   };
 
   return (
@@ -109,13 +110,17 @@ const MainContent = ({ data }) => {
         <h2>{data.mainSection.ourStory.title}</h2>
         <p>{data.mainSection.ourStory.description}</p>
         <img src={data.mainSection.ourStory.image} alt="Our Story" />
-        <button className="btn">Check Us</button>
+        <Link to="/about">
+          <button className="btn">Check Us</button>
+        </Link>
       </section>
       <section className="section visit-us">
         <h2>{data.mainSection.visitUs.title}</h2>
         <p>{data.mainSection.visitUs.description}</p>
         <img src={data.mainSection.visitUs.image} alt="Visit Us" />
-        <button className="btn">Contact Us</button>
+        <Link to="/contact">
+          <button className="btn">Contact Us</button>
+        </Link>
       </section>
     </main>
   );
