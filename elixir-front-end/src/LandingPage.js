@@ -87,22 +87,7 @@ const HeroSection = ({ data }) => {
 };
 
 // Main content component for the home page
-const MainContent = ({ data = {} }) => {
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/menu.jpeg"; // Path to the image in the public folder
-    link.download = "menu.jpeg"; // File name when downloaded
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  // Ensure mainSection exists before rendering
-  if (!data.mainSection) {
-    return <p>Loading...</p>; // or any fallback UI
-  }
-
-  return (
+  const MainContent = ({ data }) => (
     <main className="main">
       <h1>{data.mainSection.tagline}</h1>
 
