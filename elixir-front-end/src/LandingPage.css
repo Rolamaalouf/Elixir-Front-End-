@@ -51,7 +51,17 @@
   background-size: cover;        /* Cover the entire section */
   background-position: center;    /* Center the background image */
 }
-
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit; /* Inherit the background image */
+  filter: blur(15px); /* Adjust the blur amount */
+  z-index: 1; /* Place behind the content */
+}
 
 .ball-button {
   position: absolute;             /* Position it absolutely within the hero */
