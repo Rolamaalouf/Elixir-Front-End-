@@ -7,9 +7,8 @@ import ball from "./Assets/ball.png";
 import { useNavigate } from "react-router-dom";
 import Menu from "./Menu";
 import AboutUs from "./aboutus";
-import ContactUs from "./contactus"
+import ContactUs from "./contactus";
 import Footer from "./Components/footer";
-
 
 const LandingPage = () => {
   const [data, setData] = useState(null);
@@ -87,26 +86,31 @@ const HeroSection = ({ data }) => {
 };
 
 // Main content component for the home page
-  const MainContent = ({ data }) => (
+const MainContent = ({ data }) => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = `${process.env.PUBLIC_URL}/menu.jpeg`; // Use PUBLIC_URL to access the public folder
+    link.download = "menu.jpeg"; // Set the file name when downloaded
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
     <main className="main">
       <h1>{data.mainSection.tagline}</h1>
-
       <section className="section our-menu">
         <h2>{data.mainSection.ourMenu.title}</h2>
         <p>{data.mainSection.ourMenu.description}</p>
         <img src={data.mainSection.ourMenu.image} alt="Our Menu" />
-        <button className="btn" onClick={handleDownload}>
-          Download Menu
-        </button>
+        <button className="btn" onClick={handleDownload}>Download Menu</button> {/* Updated to trigger download */}
       </section>
-
       <section className="section our-story">
         <h2>{data.mainSection.ourStory.title}</h2>
         <p>{data.mainSection.ourStory.description}</p>
         <img src={data.mainSection.ourStory.image} alt="Our Story" />
         <button className="btn">Check Us</button>
       </section>
-
       <section className="section visit-us">
         <h2>{data.mainSection.visitUs.title}</h2>
         <p>{data.mainSection.visitUs.description}</p>
