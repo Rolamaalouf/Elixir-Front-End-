@@ -28,7 +28,7 @@ body {
 /* Hero Content - Left Side */
 .head-content {
   max-width: 50%;
-  text-align: left;
+  text-align: center;
 }
 
 .head-content h1 {
@@ -44,7 +44,7 @@ body {
 
 /* Hero Image - Right Side */
 .head img {
-  max-width: 40%;
+  max-width: 50%;
   height: auto;
   position: relative;
   top: 20px;
