@@ -16,7 +16,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     axios
-      .get("https:/elixir-repo-3.onrender.com/api/landing-page")
+      .get("https://elixir-repo-3.onrender.com/api/landing-page")
       .then((response) => {
         setData(response.data);
       })
@@ -99,25 +99,28 @@ const MainContent = ({ data }) => {
 
   return (
     <main className="main">
-      <h3>{data.mainSection.tagline}</h3>
+      <h3>{data?.mainSection?.tagline}</h3>
+      
       <section className="section our-menu">
-        <h2>{data.mainSection.ourMenu.title}</h2>
-        <p>{data.mainSection.ourMenu.description}</p>
-        <img src={data.mainSection.ourMenu.image} alt="Our Menu" />
-        <button className="btn" onClick={handleDownload}>Download Menu</button> {/* Updated to trigger download */}
+        <h2>{data?.mainSection?.ourMenu?.title}</h2>
+        <p>{data?.mainSection?.ourMenu?.description}</p>
+        <img src={data?.mainSection?.ourMenu?.image || ''} alt="Our Menu" />
+        <button className="btn" onClick={handleDownload}>Download Menu</button>
       </section>
+
       <section className="section our-story">
-        <h2>{data.mainSection.ourStory.title}</h2>
-        <p>{data.mainSection.ourStory.description}</p>
-        <img src={data.mainSection.ourStory.image} alt="Our Story" />
+        <h2>{data?.mainSection?.ourStory?.title}</h2>
+        <p>{data?.mainSection?.ourStory?.description}</p>
+        <img src={data?.mainSection?.ourStory?.image || ''} alt="Our Story" />
         <Link to="/about">
           <button className="btn">Check Us</button>
         </Link>
       </section>
+
       <section className="section visit-us">
-        <h2>{data.mainSection.visitUs.title}</h2>
-        <p>{data.mainSection.visitUs.description}</p>
-        <img src={data.mainSection.visitUs.image} alt="Visit Us" />
+        <h2>{data?.mainSection?.visitUs?.title}</h2>
+        <p>{data?.mainSection?.visitUs?.description}</p>
+        <img src={data?.mainSection?.visitUs?.image || ''} alt="Visit Us" />
         <Link to="/contact">
           <button className="btn">Contact Us</button>
         </Link>
