@@ -37,10 +37,10 @@
 /* Hero Section */
 .hero {
   width: 100%;                    /* Ensure the hero section spans full width */
-  height: 100vh;                  /* Full height hero section */
+  height: 100%;                  /* Full height hero section */
   background-repeat: no-repeat;   /* Prevent repeating the background image */
   background-position: center center; /* Center the background image both horizontally and vertically */
-  background-size: cover;         /* Ensure the background image covers the entire section */
+  background-size: contain;         /* Ensure the background image covers the entire section */
   display: flex;                  /* Use flexbox layout */
   align-items: flex-start;        /* Align items to the top */
   justify-content: center;        /* Center content horizontally */
@@ -95,7 +95,7 @@
   margin: 25px 0; /* Margin for better spacing */
 }
 .hero-content h2 {
-  margin: -45px 0; /* Margin for better spacing */
+  margin: -10px 0; /* Margin for better spacing */
 }
 
 /* Tagline Section */

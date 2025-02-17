@@ -45,9 +45,18 @@
 }
 
 /* Fix Slick Arrows */
-.slick-prev, .slick-next {
+.slick-prev{
   z-index: 10;
   font-size: 24px;
+  margin-left: -250px;
+  color: black ;
+  background-color: transparent !important; /* Set background to transparent */
+  border: none; /* Ensure no border around the arrow button */
+}
+.slick-next {
+  z-index: 10;
+  font-size: 24px;
+  margin-right: -250px;
   color: black ;
   background-color: transparent !important; /* Set background to transparent */
   border: none; /* Ensure no border around the arrow button */
@@ -86,22 +95,22 @@
 }
 
 .mission1 {
-  border: 2px solid #C3A3EC;
-  box-shadow: -3px -4px 0 1px #C3A3EC;
+  border: 1px solid #A3D5EC;
+  box-shadow: -3px -3px 0px 4px #A3D5EC;
   align-self: flex-start;
 }
 
 .vision1 {
-  border: 2px solid #A3D5EC;
-  box-shadow: 3px -4px 0 1px #A3D5EC;
+  border: 1px solid #C3A3EC;
+  box-shadow: 3px -4px 0 1px #C3A3EC;
   align-self: flex-end; 
 }
 
 .gopadel1 {
-  border: 2px solid #C3A3EC;
-  box-shadow: -3px 4px 0 1px #C3A3EC;
+  border: 1px solid #A3D5EC;
+  box-shadow: -3px 4px 0 1px #A3D5EC;
   align-self: flex-start;
-  margin-bottom: 300px;
+  margin-bottom: 400px;
 }
 
 .mission1 img, .vision1 img, .gopadel1 img {
@@ -131,20 +140,42 @@
   .our-story1 {
     flex-direction: column;
   }
+  .storyimage1{
+    margin-top: 10px;
+  }
+  .storytitle1 h1{
+    text-align: left;
+    font-size: 3rem;
+  }
+  .storytitle1 p{
+    text-align: center;
+    max-width: 250px;
+  }
+  .all11 h2{
+    font-size: 20px;
+  }
+
+  .all11 p{
+    font-size: 10px;
+  }
+
   .mission1, .vision1, .gopadel1 {
-    width: 100%;
+    width: 50%;
     padding: 20px;
     flex-direction: column;
     align-items: center;
   }
-  .mission1 img, .vision1 img, .gopadel1 img {
-    width: 80px;
-    position: relative;
-    left: 0;
-    right: 0;
-    transform: none;
-    margin-top: 15px;
+  .mission1, .vision1, .gopadel1 {
+    flex-direction: column;  /* Stack elements vertically */
+    text-align: center;       /* Center text */
+    max-width: 50%;              /* Full width */
+    padding: 20px;            /* Adjust padding */
+    position: relative;       /* Remove absolute positioning */
   }
+  .gopadel1{
+    z-index: 10;
+  }
+
   .gallery-carousel {
     width: 100%;
   }
@@ -160,12 +191,12 @@
 }
 
 .vision1 {
-  border: 2px solid #A3D5EC;
-  box-shadow: 3px -4px 0 1px #A3D5EC;
+
+  margin-right: 100px;
   width: 90%; /* Increase width */
-  height: 200px; /* Increase height */
+  height: 300px; /* Increase height */
   position: absolute; /* Position it above the other sections */
-  top: 80px; /* Move it up without affecting others */
+  top: 150px; /* Move it up without affecting others */
   z-index: 1; /* Ensures it stays above */
 }
 
@@ -173,11 +204,15 @@
   position: relative; /* Keeps them in normal flow */
   z-index: 0; /* Ensures they stay below */
   top: -100px;
+  height: 300px;
+  margin-left: 100px;
 }
 .gopadel1 {
   position: relative; /* Keeps them in normal flow */
   z-index: 0; /* Ensures they stay below */
-  top: 20px;
+  top: 100px;
+  height: 300px;
+  margin-left: 100px;
 }
 .our-story1 {
   display: grid; /* Ensure grid layout */
@@ -222,9 +257,37 @@
 
   .storyimage1 {
     order: -1; /* Move image above text on mobile */
+    max-width: 300px;
   }
 
   .storyimage1 img {
     max-width: 100%;
   }
+  
+.thegallery1 {
+  margin-top: -10px;
+  text-align: left;
 }
+
+.thegallery1 h2{
+  margin-bottom: 25px;
+  margin-left: 30px;
+  font-size: 3rem;
+}
+.gallery-carousel {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.carousel-image {
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  object-fit: fill;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+}
+.buttonpadel {
+ margin-top: 10px;
+}
+
