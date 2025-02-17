@@ -35,7 +35,7 @@ const AboutUs = () => {
         <>
           <div className="our-story1">
             <div className="storyimage1">
-              <img src={aboutData.ourStory.image} alt="Our Story" />
+              <img src={aboutData.ourStory.image} alt={aboutData.ourStory.title} />
             </div>
             <div className="storytitle1">
               <h1>{aboutData.ourStory.title}</h1>
@@ -48,7 +48,7 @@ const AboutUs = () => {
             <Slider {...sliderSettings} className="gallery-carousel">
               {aboutData.gallery.images.map((image, index) => (
                 <div key={index}>
-                  <img src={image} alt={`Gallery Image ${index + 1}`} className="carousel-image" />
+                  <img src={image} alt={`Gallery ${index + 1}`} className="carousel-image" />
                 </div>
               ))}
             </Slider>
@@ -60,7 +60,7 @@ const AboutUs = () => {
                 <h2>{aboutData.mission.title}</h2>
                 <p>{aboutData.mission.content}</p>
               </section>
-              <img src={aboutData.mission.image} alt="Mission" />
+              <img src={aboutData.mission.image} alt={aboutData.mission.title} />
             </div>
 
             <div className="vision1">
@@ -68,7 +68,7 @@ const AboutUs = () => {
                 <h2>{aboutData.vision.title}</h2>
                 <p>{aboutData.vision.content}</p>
               </section>
-              <img src={aboutData.vision.image} alt="Vision" />
+              <img src={aboutData.vision.image} alt={aboutData.vision.title} />
             </div>
 
             <div className="gopadel1">
@@ -81,7 +81,7 @@ const AboutUs = () => {
                   </a>
                 </button>
               </section>
-              <img src={aboutData.goPadel.image} alt="Go Padel" />
+              <img src={aboutData.goPadel.image} alt={aboutData.goPadel.title} />
             </div>
           </div>
         </>
