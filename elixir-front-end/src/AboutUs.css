@@ -17,12 +17,18 @@
   gap: 3%;
   overflow: auto;
 }
-
+.storytitle1 h1{
+  text-align: center;
+}
 
 /* Gallery Section */
 .thegallery1 {
   margin-top: -100px;
   text-align: center;
+}
+
+.thegallery1 h2{
+  margin-bottom: 25px;
 }
 .gallery-carousel {
   width: 80%;
@@ -42,7 +48,9 @@
 .slick-prev, .slick-next {
   z-index: 10;
   font-size: 24px;
-  color: black;
+  color: black ;
+  background-color: transparent !important; /* Set background to transparent */
+  border: none; /* Ensure no border around the arrow button */
 }
 .slick-prev:before, .slick-next:before {
   color: black !important;

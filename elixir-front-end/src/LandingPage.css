@@ -3,12 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: 400;
 }
 
 /* Landing Page */
 .landing-page {
   width: 100vw;
-  background: linear-gradient(180deg, #FFFFFF 88.68%, rgba(163, 213, 236, 0.7) 94.83%);
+  background: linear-gradient(180deg, #FFFFFF 88.68%, #C8E5F1 94.83%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,24 +34,22 @@
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
-  width: 100%;
-  height: 900px; /* Fixed height */
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  align-items: flex-start; /* Align items to the top */
-  justify-content: center;
-  text-align: center;
-  padding-top: 50px; /* Adjust to raise the title and subtitle */
+  width: 100%;                    /* Ensure the hero section spans full width */
+  height: 100vh;                  /* Full height hero section */
+  background-repeat: no-repeat;   /* Prevent repeating the background image */
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  background-size: cover;         /* Ensure the background image covers the entire section */
+  display: flex;                  /* Use flexbox layout */
+  align-items: flex-start;        /* Align items to the top */
+  justify-content: center;        /* Center content horizontally */
+  text-align: center;             /* Center text */
+  padding-top: 50px;              /* Adjust to raise the title and subtitle */
+  position: relative;             /* Position context for pseudo-elements */
 }
-.hero {
-  position: relative;             /* Ensure the hero section is the positioning context */
-  height: 100vh;                 /* Full height hero section */
-  background-size: cover;        /* Cover the entire section */
-  background-position: center;    /* Center the background image */
-}
+
+/* Optional: The pseudo-element for the blurred background effect */
 .hero::before {
   content: '';
   position: absolute;
@@ -58,11 +57,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: inherit; /* Inherit the background image */
-  filter: blur(15px); /* Adjust the blur amount */
-  z-index: 1; /* Place behind the content */
+  background-image: inherit;      /* Inherit the background image */
+  filter: blur(20px);             /* Apply blur effect */
+  z-index: 1;                     /* Place behind the content */
+  pointer-events: none;           /* Prevent interaction with the pseudo-element */
 }
-
 .ball-button {
   position: absolute;             /* Position it absolutely within the hero */
   bottom: -20px;                   /* 30px from the bottom */
@@ -82,19 +81,21 @@
 .ball-text {
   position: absolute;             /* Position text over the ball */
   color: black;                  /* Text color */
-  font-size: 16px;               /* Font size */
+  font-size: 20px;               /* Font size */
   font-weight: bold;             /* Bold text */
   text-align: center;            /* Center text */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: add shadow for visibility */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7); /* Optional: add shadow for visibility */
 }
 .hero .hero-content {
   z-index: 1;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: text shadow for contrast */
 }
 
-.hero-content h1,
+.hero-content h1{
+  margin: 25px 0; /* Margin for better spacing */
+}
 .hero-content h2 {
-  margin: 5px 0; /* Margin for better spacing */
+  margin: -45px 0; /* Margin for better spacing */
 }
 
 /* Tagline Section */
@@ -137,12 +138,12 @@
   /* Section Alignment */
   .our-menu {
     align-self: flex-end; /* Align to right */
-    border: 2px solid #A3D5EC;
+    border: 2px solid #A3D5EC 50%;
   }
 
   .our-story {
     align-self: flex-start; /* Align to left */
-    border: 2px solid #C3A3EC;
+    border: 2px solid #C3A3EC 50%;
   }
 
   .visit-us {
