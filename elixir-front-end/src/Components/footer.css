@@ -51,7 +51,7 @@
   @media (max-width: 768px) {
     .footer {
         padding: 50px; 
-        margin-left: -160px;              /* Further reduce padding */
+        margin-left: -200px;              /* Further reduce padding */
     }
 
     .footer-logo {
