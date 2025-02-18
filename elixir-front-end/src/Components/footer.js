@@ -36,9 +36,13 @@ export default function Footer() {
 
       {/* Social Media Icons */}
       <div className="social-icons">
-        <img src={whatsapp} alt="WhatsApp" className="icon" />
-        <img src={instagram} alt="Instagram" className="icon" />
-      </div>
+        <a href="https://wa.me/96176415100" target="_blank" rel="noopener noreferrer">
+          <img src={whatsapp} alt="WhatsApp" className="icon" />
+        </a>
+        <a href="https://www.instagram.com/elixir.mocktailbar?igsh=NG81Z2Y0Y2diaWh5" target="_blank" rel="noopener noreferrer">
+          <img src={instagram} alt="Instagram" className="icon" />
+        </a>
+        </div>
     </footer>
   );
 }

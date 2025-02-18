@@ -55,7 +55,8 @@ const ContactUs = () => {
           <label htmlFor="message">Message</label>
           <textarea
             name="message"
-            placeholder="Your Message"
+            placeholder="
+             Your Message"
             value={formData.message}
             onChange={handleChange}
             className="w-full p-2 border rounded h-32"
@@ -72,7 +73,8 @@ const ContactUs = () => {
 
       {/* Location Section */}
       <div className="location">
-        <h2>Location</h2>
+        <h3>Location : Hasbaya - Main Road at Go Padel Arena
+        </h3>
         <div>
         <iframe
       title="Google Maps"

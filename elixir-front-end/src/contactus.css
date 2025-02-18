@@ -2,7 +2,7 @@
 .contactus-page {
   min-height: 100vh; /* Full page height */
   width: 100vw; /* Full viewport width */
-  background: linear-gradient(to bottom, #D8D2ED, white) !important ;
+  background: linear-gradient(to bottom, #D8D2ED 10%, white 90%) !important ;
   min-height: 100px;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
 }
 .getintouch {
     display: grid;
-    margin-top: 23%;
+    margin-top: 30%;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto; /* Two rows: one for the header and one for the form */
     align-items: start; /* Align items at the top */
@@ -28,14 +28,15 @@
     max-width: 400px;
     height: auto; /* Adjust height based on content */
     text-align: center;
+    box-shadow: 0 6px 15px #C3A3EC;
     gap: 0px;
-
 }
 
 
-.getintouch .header2 h2 {
-    font-size: 1rem;
+.header2 {
+    font-size: 1.5rem;
     font-weight: bold;
+    font-style: italic;
     margin-bottom: 20px; /* Add space between the header and the form */
   }
 .form {
@@ -66,15 +67,15 @@ input {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 2px solid #C3A3EC;
+    border: 2px solid #ddd;
     box-shadow: 0 6px 15px #C3A3EC;
     margin-bottom: 10px;
   }
 
   textarea{
     width: 100%;
-    border: 1px solid #ddd;
-    box-shadow: 0 6px 15px #BFE0EE;
+    border: 3px solid #ddd;
+    box-shadow: 0 6px 15px #C3A3EC;
     margin-bottom: 10px;
     height:50px;
   }
@@ -86,7 +87,7 @@ input {
     border: none;
     box-shadow: 3px 4px 0 1px  #5F687C;
     cursor: pointer;
-    color: white;
+    color:black;
   }
   
   button:hover {
@@ -99,6 +100,7 @@ input {
     width: 100%;
     max-width: 420px;
     height: auto; /* Adjust height based on content */
+    border: 3px solid #BFE0EE;
     box-shadow: 0 6px 15px #BFE0EE;
     background: #fff;
     gap:0px;
@@ -117,3 +119,4 @@ input {
     text-align: center; 
     font-size: 4rem;
   }
+ 

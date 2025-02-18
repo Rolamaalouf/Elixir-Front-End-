@@ -201,7 +201,8 @@ body {
 }
 /* Menu Category Containers */
 .menu-column img {
-  width: 100px; /* Make images fill the column width */
+  width: 50px; /* Make images fill the column width */
+  height: 150px;
   border-radius: 10px; /* Rounded corners for images */
   margin: 10px 0; /* Space between images */
 }
@@ -230,6 +231,7 @@ body {
     text-align: center;
     height: auto;
     padding: 30px;
+    margin-top: 20px;
   }
 
   .head-content {
@@ -268,4 +270,12 @@ body {
 
 .menu-column img {
   margin-bottom: 10px;    /* Optional: Add space between images */
+}
+
+.refreshment .menu-item{
+  margin-inline: -15px;
+}
+
+.refreshment{
+  margin-bottom: 10px;
 }

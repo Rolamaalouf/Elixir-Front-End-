@@ -14,9 +14,8 @@ body, html {
     align-items: center;            /* Center items vertically */
     justify-content: space-between; /* Space between items */
     padding: 5px 10px;            /* Adjusted padding for better spacing */
-    border: 1px solid rgba(211, 211, 211, 0.5); /* Light grey border */
+    border: 3px solid rgba(185, 184, 184, 0.5); /* Light grey border */
     border-radius: 8px;           /* Rounded corners */
-    box-shadow: 0 4px 4px rgba(211, 211, 211, 0.5); /* Shadow effect */
     margin-left: 35px;
     backdrop-filter: blur(10px);  /* Blur effect for background */
     background: transparent;     
@@ -57,7 +56,7 @@ body, html {
     .header {
         flex-direction: row;      /* Stack items vertically on small screens */
         align-items: flex-start;     /* Align items to the start */
-        padding: 10px;               /* Add more padding */
+        margin-left: 10px;              /* Add more padding */
     }
 
     .logo img {

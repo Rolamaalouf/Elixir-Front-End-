@@ -29,6 +29,7 @@ const AboutUs = () => {
     autoplaySpeed: 3000,
   };
 
+
   return (
     <div className="about-us-container1">
       {aboutData ? (

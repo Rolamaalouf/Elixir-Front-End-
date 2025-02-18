@@ -133,6 +133,7 @@ const Menu = () => {
 
                     {/* Column 3: Milkshake Categories */}
                     <div className="menu-column">
+                    <div className="beverage-category">
                         <h3>Milkshakes</h3>
                         <ul>
                             {Array.isArray(menuData.menuCategories) && menuData.menuCategories.find(category => category.categoryName === "Milkshakes")?.items.map((item) => (
@@ -142,6 +143,8 @@ const Menu = () => {
                                 </li>
                             ))}
                         </ul>
+                        <div className="menu-column">
+                        <div className="refreshment">
                         <h3>Refreshments</h3>
                         <ul>
                             {Array.isArray(menuData.menuCategories) && menuData.menuCategories.find(category => category.categoryName === "Refreshments")?.items.map((item) => (
@@ -151,6 +154,9 @@ const Menu = () => {
                                 </li>
                             ))}
                         </ul>
+                        </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </section>
