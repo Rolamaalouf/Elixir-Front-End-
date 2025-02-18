@@ -136,6 +136,7 @@
   .our-menu {
     align-self: flex-end; /* Align to right */
     border: 2px solid #A3D5EC 50%;
+    position: relative;
   }
 
   .our-story {
@@ -228,3 +229,4 @@
   z-index: 1;                   /* Ensure content is above the blurred background */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: text shadow for contrast */
 }
+

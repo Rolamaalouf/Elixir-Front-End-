@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Menu.css"; // Import the CSS file
 
+const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = `${process.env.PUBLIC_URL}/menu.jpeg`;
+    link.download = "menu.jpeg";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
 const Menu = () => {
     const [menuData, setMenuData] = useState({
         bestSellers: [],
@@ -60,7 +69,9 @@ const Menu = () => {
                     )}
                 </div>
             </section>
-
+            <center>
+            <button className="btn" onClick={handleDownload}>Download Menu</button>
+            </center>
             {/* Menu Categories Section */}
             <section className="menu-categories">
                 <h2>Our Menu</h2>
