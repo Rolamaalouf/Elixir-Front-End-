@@ -50,8 +50,9 @@
 
   @media (max-width: 768px) {
     .footer {
-        padding: 50px; 
-        margin-left: -200px;              /* Further reduce padding */
+       
+        padding:0 220px; 
+        margin-left: -320px;              /* Further reduce padding */
     }
 
     .footer-logo {
@@ -60,10 +61,11 @@
     }
 
     .icon {
-        height: 60px;                /* Reduce icon size */
-        width: 60px;                 /* Reduce icon size */
+        height: 40px;                /* Reduce icon size */
+        width: 40px;                 /* Reduce icon size */
+        margin-inline-end: -20px;
     }
-    .footer-form {
-      margin-right: 20px;
-    }
+   .footer-form {
+    margin-right: 10px;
+   }
 }

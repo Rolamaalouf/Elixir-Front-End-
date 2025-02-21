@@ -230,3 +230,12 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: text shadow for contrast */
 }
 
+@media (max-width: 480px) {
+ 
+    .our-menu img {
+      position: absolute;
+      bottom: -120px; /* Slightly further from the bottom */
+      left: -110px
+    }
+
+  }

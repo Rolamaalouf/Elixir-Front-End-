@@ -72,6 +72,7 @@ const Menu = () => {
             <center>
             <button className="btn" onClick={handleDownload}>Download Menu</button>
             </center>
+            <br></br>
             {/* Menu Categories Section */}
             <section className="menu-categories">
                 <h2>Our Menu</h2>

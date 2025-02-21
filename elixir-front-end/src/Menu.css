@@ -201,8 +201,8 @@ body {
 }
 /* Menu Category Containers */
 .menu-column img {
-  width: 50px; /* Make images fill the column width */
-  height: 150px;
+  width: 70px; /* Make images fill the column width */
+  height: 110px;
   border-radius: 10px; /* Rounded corners for images */
   margin: 10px 0; /* Space between images */
 }

@@ -10,12 +10,13 @@ const ContactUs = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);// You can handle form submission here, e.g., send the data to an API
+    console.log("Form submitted:", formData);
+    
+    // Clear form fields after submission
+    setFormData({ name: "", phone: "", message: "" });
   };
-
   return (
     <div className="contactus-page">
     <div className="contactus">
@@ -63,9 +64,11 @@ const ContactUs = () => {
             required
           ></textarea>
           </div>
+          <center>
           <button className="button1" type="submit" >
           Sip & Send
           </button>
+          </center>
          </form>
         </div>
         </div>
